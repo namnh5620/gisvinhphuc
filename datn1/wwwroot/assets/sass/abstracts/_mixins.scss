@@ -1,0 +1,276 @@
+﻿@import "_variables.scss";
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        min-width: 80%;
+    }
+}
+
+@mixin transition() {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+@mixin overlay-bg() {
+    background: rgba($black, 0.4);
+}
+
+@mixin transform-img() {
+    transform: scale(1.045);
+}
+
+@mixin box() {
+    padding: 20px;
+    background: $white;
+}
+
+@mixin box-title() {
+    background: $primary-color;
+    color: $white;
+    font-family: $heading-font;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 25px;
+    text-transform: uppercase;
+}
+
+@mixin box-shadow() {
+    box-shadow: 0px 0px 6px rgba($black, 0.3);
+}
+
+@mixin text-shadow() {
+    text-shadow: 0 1px 2px rgba($black,.6);
+}
+
+
+@mixin first-meta-li() {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@mixin second-meta-li() {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+@mixin third-meta-li() {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        box-shadow: inset $top $left $blur $color;
+    }
+    @else {
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin gradient ($direction, $list) {
+    background-image: -webkit-linear-gradient($direction, $list);
+    background-image: -moz-linear-gradient($direction, $list);
+    background-image: -o-linear-gradient($direction, $list);
+    background-image: linear-gradient($direction, $list);
+}
+
+@mixin Opacity($value) {
+    $IEValue: $value*100;
+    opacity: $value;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+    filter: alpha(opacity=$IEValue);
+}
+
+@mixin btn-primary() {
+    transition: all .25s ease-in;
+    border-radius: 0 !important;
+    background: $primary-color;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2.5;
+    border: 1px solid $primary-color;
+    text-transform: uppercase !important;
+}
+
+@mixin btn-hover() {
+    background: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+}
+
+
+// Mobile
+@mixin mobile {
+    @media(max-width: 767px) {
+        @content
+    }
+}
+
+// IPad
+@mixin ipad {
+    @media(min-width: 768px) and (max-width:1024px) {
+        @content
+    }
+}
+/**** Màn hình ipad hiển thị theo chiều ngang (Landscape) ****/
+@mixin ipadLands {
+    @media only screen and (max-width:992px) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1200px) {
+        @content
+    }
+}
+
+@mixin ipad {
+    @media only screen and (max-width:1024px) {
+        @content
+    }
+}
+
+@mixin ipad-port {
+    @media only screen and (max-width:992px) {
+        @content
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width:769px) {
+        @content
+    }
+}
+/****Màn hình ipad loại bé hiển thị theo chiều dọc (Portrait)****/
+@mixin ipadSmPort {
+    @media only screen and (max-width:600px) {
+        @content
+    }
+}
+
+@mixin mobile-small {
+    @media only screen and (max-width: 577px) {
+        @content
+    }
+}
+/****Màn hình điện thoại Iphone Plus****/
+@mixin iphonePlus {
+    @media only screen and (max-width: 415px) {
+        @content
+    }
+}
+/****Màn hình điện thoại Iphone****/
+@mixin iphone {
+    @media only screen and (max-width: 376px) {
+        @content
+    }
+}
+/****Màn hình điện thoại loại bé****/
+@mixin mobileSm {
+    @media only screen and (max-width: 376px) {
+        @content
+    }
+}
+
+
+
+@mixin onlyTablet {
+    @media (min-width: 1025px) and (max-width: 1200px) {
+        @content
+    }
+}
+
+@mixin onlyIpad {
+    @media (min-width: 992px) and (max-width:1024px) {
+        @content
+    }
+}
+
+@mixin onlyIpad-port {
+    @media (min-width: 769px) and (max-width:992px) {
+        @content
+    }
+}
+
+@mixin onlyMobile {
+    @media (min-width: 577px) and (max-width:769px) {
+        @content
+    }
+}
+
+@mixin onlyMobile-small {
+    @media (max-width: 577px) {
+        @content
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+
+/*@mixin ipad-rotate  {
+  @media screen and (max-width: 768px) and (orientation:landscape) { @content; }
+}*/
+@mixin desktop {
+    @media (min-width:768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+/****Màn hình desktop loại bé****/
+@mixin desktopSm {
+    @media only screen and (max-width:992px) {
+        @content
+    }
+}
+/****Màn hình ipad hiển thị theo chiều dọc (Portrait)****/
+@mixin ipadPort {
+    @media only screen and (max-width:769px) {
+        @content
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}

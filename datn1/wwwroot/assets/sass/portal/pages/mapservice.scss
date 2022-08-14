@@ -1,0 +1,13 @@
+﻿
+@import "../abstracts/mixins";
+@import "../abstracts/static";
+@import "../abstracts/variables";
+#pDichvubando {
+    .group-title {
+        display: block;
+        background: #003778;
+        color: #fff;
+        padding: 5px 10px;
+        font-weight: 600;
+    }
+}

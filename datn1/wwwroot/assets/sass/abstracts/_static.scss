@@ -1,0 +1,48 @@
+﻿@import url('../../fonts/roboto/font-roboto.css');
+@font-face {
+    src: url('../../fonts/roboto/Roboto-Regular.ttf');
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    ul, li { list-style: none }
+    p { margin: 0 auto; }
+    a:hover {text-decoration: none;}
+    input:focus { box-shadow: none !important;}
+}
+  
+body{
+    color:#333;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+/*.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}*/
+.row {
+    /*margin-right: 0;
+    margin-left: 0;*/
+}
+[class*="col-"] {
+    /*float: left;*/
+    /*padding-left: 0;
+    padding-right:0;*/
+}
+/*@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 90%;
+        margin-left:5%;
+    }
+}*/

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_register.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script src="~/assets/js/portal/map_register.js"></script>
+}
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center form_container">
+                <form>
+                    <div class="userInfo">
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input id="input_taikhoan" type="text" name="" class="form-control" value="" placeholder="tài khoản">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input id="input_firstname" type="text" name="" class="form-control" value="" placeholder="họ">
+                            <input id="input_lastname" type="text" name="" class="form-control" value="" placeholder="tên">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-at"></i></span>
+                            </div>
+                            <input id="input_email" type="text" name="" class="form-control" value="" placeholder="email">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input id="input_password" type="password" name="" class="form-control" value="" placeholder="mật khẩu">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-sync-alt"></i></span>
+                            </div>
+                            <input id="input_confirm_password" type="password" name="" class="form-control" value="" placeholder="xác nhận mật khẩu">
+                        </div>
+                    </div>
+                    <div class="kcnInfo">
+                        <div class="input-group mb-3">
+                            <input id="ten_dnht" type="text" name="" class="form-control" value="" placeholder="tên doanh nghiệp hạ tầng">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-code"></i></span>
+                            </div>
+                            <input id="ma_dnht" type="text" name="" class="form-control" value="" placeholder="mã doanh nghiệp hạ tầng">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input id="input_phonenumber" type="text" name="" class="form-control" value="" placeholder="số điện thoại">
+                        </div>
+                        <div class="input-group mb-3">
+                            <select class="custom-select mr-sm-2" id="kcn_dnht">
+                                <option value="" selected>Chọn Khu công nghiệp</option>
+                                <option value="KhaiQuang">Khai Quang</option>
+                                <option value="BinhXuyen2">Bình Xuyên 2</option>
+                                <option value="BaThien2">Bá Thiện 2</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="far fa-globe-asia"></i></span>
+                            </div>
+                            @*<input id="quocgia_dnht" type="text" name="" class="form-control" value="" placeholder="quốc gia">*@
+                            <select class="custom-select mr-sm-2" id="kcn_qg">
+                                <option value="" selected>Chọn quốc gia</option>
+                                <option value="1">Việt Nam</option>
+                                <option value="2">Hàn Quốc</option>
+                                <option value="3">Nhật Bản</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkAgree">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customControlInline">
+                            <label class="custom-control-label" for="customControlInline">Đồng ý với các điều khoản sử dụng</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 login_container submitBtn">
+                        <button id="register_btn" type="button" name="button" class="btn login_btn">Đăng ký</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+@*@Html.Partial("~/Views/Shared/_Footer_Map.cshtml")*@

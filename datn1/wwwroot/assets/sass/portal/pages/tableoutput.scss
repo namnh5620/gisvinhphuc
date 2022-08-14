@@ -1,0 +1,351 @@
+﻿@import "../abstracts/variables";
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/static";
+$mncap0-color: #6297ef;
+$mncap1-color: #eee;
+$font: 'Nunito-Regular';
+$mncap0-text: #fff;
+$mncap1-text: #777;
+$mn-hover: #a9caff;
+$button-color: #3ed8be;
+$filter-color:#eee;
+
+html, body {
+    background-color: #f8f8f8;
+    height: 100%;
+    overflow: hidden;
+}
+
+/********* LEFT MENU ********/
+.sidebar-nav {
+    ul.navbar-nav {
+        margin-top: 7px;
+        position: relative;
+        border: 1px solid #ddd;
+        flex-direction: unset;
+        justify-content: flex-start;
+        height: calc(100vh - 100px);
+        display: block;
+
+        a, span:not(.fas), span:not(.fas):before {
+            font-family: $font;
+        }
+
+        li {
+            position: relative;
+            width: 100%;
+            display: inline-block;
+
+            a {
+                padding: 10px 0;
+                display: inline-block;
+                width: 100%;
+
+                &.active, &:hover {
+                    font-weight: 600;
+                    background-color: $mn-hover;
+                }
+
+                i {
+                    margin-right: 7px;
+
+                    &:before {
+                        margin-left: 4px;
+                    }
+                }
+            }
+        }
+
+        li.mncap0 {
+            border-bottom: 1px solid #ccc;
+            background-color: $mncap0-color;
+            color: $mncap0-text;
+
+            &:hover {
+                background-color: $mn-hover;
+            }
+
+            a {
+                padding-left: 20px;
+                font-weight: 600;
+            }
+        }
+
+        li.mncap1 {
+            border-top: 1px solid #ccc;
+            background-color: $mncap1-color;
+            color: $mncap1-text;
+
+            a {
+                padding-left: 35px;
+                font-weight: 500;
+                color: $mncap1-text;
+            }
+        }
+
+        li.mncap2 {
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+            color: $mncap1-text;
+        }
+    }
+}
+
+/***** RIGHT CONTENT *******/
+#content {
+    padding-right: 15px;
+    position: relative;
+}
+/** Top **/
+#page-top {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: $mncap0-color;
+    }
+
+    #cboToolsCMS {
+        position: relative;
+    }
+
+    button {
+        background-color: $button-color;
+        border: none;
+        color: white;
+        padding: 6px 17px;
+        right: 0;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        border-radius: 20px;
+        z-index: 99;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+/** Filter **/
+#tools-filter {
+    flex-flow: wrap;
+    padding: 5px;
+    background-color: $filter-color;
+
+    .ftitems {
+        margin: 5px;
+        display: inline-flex;
+        position: relative;
+
+        label {
+            display: none;
+        }
+
+        input.fts {
+            width: 300px;
+        }
+
+        .datepicker {
+            padding-right: 20px;
+        }
+
+
+        i {
+            position: absolute;
+            top: 10px;
+            right: 10px
+        }
+    }
+
+    .UI-DROP {
+        position: relative;
+    }
+
+    .form-control {
+        font-size: 13px;
+        height: 32px;
+        padding: 6px 5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        font-weight: 400;
+    }
+
+    .ui-tieude {
+        display: inline;
+        font-weight: 500;
+        padding-right: 10px;
+        padding-top: 5px;
+        float: left;
+        font-size: 14px;
+        //text-align: right;
+        margin-right: 5px;
+        min-width: 80px;
+        font-weight: bold;
+    }
+}
+
+/** Result **/
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+
+    .left {
+        font-weight: bold;
+    }
+}
+
+/******* TABLE *******/
+#dView {
+    position: relative;
+
+    table#tbView {
+        border: none;
+
+        thead {
+            position: relative;
+
+            th {
+                position: sticky;
+                top: -1px;
+                text-align: center;
+                Vertical-align: middle;
+                font-weight: 600;
+                background-color: $filter-color;
+                border: 1px solid #ddd;
+            }
+
+            .order {
+                position: absolute;
+                right: 3px;
+                display: none;
+                flex-direction: column;
+                font-size: 14px;
+
+                i {
+                    color: $mn-hover;
+                    cursor: pointer;
+                    height: 8px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                &:hover i {
+                    color: #f3f3f3;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: $mn-hover;
+                }
+            }
+
+            td {
+                &:first-child, &:last-child {
+                    text-align: center;
+                }
+
+                &:last-child {
+                    .fa {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        th, td {
+            padding: 6px 10px;
+            line-height: 1.5;
+        }
+    }
+}
+
+/**** Modal ****/
+.modal-header {
+    background: $mncap0-color;
+    border-radius: 5px 5px 0 0;
+
+    h4 {
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+.modal-content {
+    height: 100%;
+}
+
+.modal-dialog {
+    width: 86% !important;
+    height: 95% !important;
+}
+
+#modalCommon .modal-dialog {
+    top: 30px;
+}
+
+#modalDetail ul {
+    list-style: none;
+    column-count: 2;
+    position: relative;
+}
+
+#fChiTiet .modal-dialog {
+    width: 80%;
+    height: 85%;
+}
+
+#fChiTiet .modal-body {
+    position: relative;
+}
+
+#lstChiTiet {
+    list-style: none;
+}
+
+#lstChiTiet li {
+    padding: 5px !important;
+}
+
+/****** PHAN TRANG ******/
+#phantrang {
+    .pagination {
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        padding: 5px 10px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+/**** RESPONSIVE ****/
+@media (min-width: 768px) {
+    .modal-dialog {
+        margin: 15px auto;
+    }
+}

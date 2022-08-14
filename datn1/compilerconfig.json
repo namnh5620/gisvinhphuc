@@ -1,0 +1,67 @@
+[
+  {
+    "outputFile": "wwwroot/assets/sass/portal/layout/_footer.css",
+    "inputFile": "wwwroot/assets/sass/portal/layout/_footer.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/layout/_header.css",
+    "inputFile": "wwwroot/assets/sass/portal/layout/_header.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/trangchu.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/trangchu.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_thongke.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_thongke.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_vanban.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_vanban.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_login.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_login.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_register.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_register.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_bando.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_bando.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_crud.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_crud.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/layout/_header_admin.css",
+    "inputFile": "wwwroot/assets/sass/portal/layout/_header_admin.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/layout/_footer_admin.css",
+    "inputFile": "wwwroot/assets/sass/portal/layout/_footer_admin.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_chudautu_kcn.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_chudautu_kcn.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "wwwroot/assets/sass/portal/pages/map_chudautu_user.css",
+    "inputFile": "wwwroot/assets/sass/portal/pages/map_chudautu_user.scss",
+    "sourceMap": false
+  }
+]

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Đồ Án | @ViewBag.Title</title>
+    <!-- Bootstrap 4 -->
+    <link rel="shortcut icon" href="/assets/images/logo.ico" type="image/x-icon">
+    <link href="~/assets/fonts/fontawe512/css/all.css" rel="stylesheet">
+    <link href="~/assets/fonts/fontawe4/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/fonts/fontawesome-free-5.10.0-web/css/all.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/ScrollBar/perfect-scrollbar.css" rel="stylesheet" />
+    <script src="~/assets/lib/ScrollBar/perfect-scrollbar.js"></script>
+    <link href="~/assets/lib/toastr.css" rel="stylesheet" />
+    <script src="~/assets/lib/jquery3/jquery.min.js"></script>
+    <script src="~/assets/lib/toastr.js"></script>
+    <!-- jQuery 3 -->
+    <!-- Bootstrap 4 -->
+    @*<script src="~/assets/lib/bootstrap4/js/popper.min.js"></script>
+        <script src="~/assets/lib/bootstrap4/js/bootstrap.min.js"></script>*@
+    <script src="~/assets/lib/bootstrap4/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/DevJS/GQL.js"></script>*@
+    <script src="~/assets/js/portal/map_layout.js"></script>
+    <script src="~/assets/js/portal/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="~/assets/lib/chart/export-data.js"></script>
+    <script src="~/assets/lib/chart/exporting.js"></script>
+    <script src="~/assets/lib/chart/highcharts.js"></script>
+    <!--CSS Style-->
+    <link href="~/assets/lib/balloon.css" rel="stylesheet" />
+    @*<link href="~/assets/sass/portal/layout/_header.css" rel="stylesheet" />*@
+    <link href="~/assets/sass/portal/layout/_footer.css" rel="stylesheet" />
+
+
+    <!-- Google Web Fonts -->
+    @*<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">*@
+
+    <!-- Icon Font Stylesheet -->
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">*@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/assets/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/lib/wow/wow.min.js"></script>
+    <script src="~/assets/lib/easing/easing.min.js"></script>
+    <script src="~/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/assets/lib/counterup/counterup.min.js"></script>
+    <script src="~/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/assets/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/assets/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    @*<script src="~/assets/js/main.js"></script>*@
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("Scripts", required: false)
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <!--<div class="header-top">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="header-top-wrapper d-flex">
+                <div class="header-left d-flex">
+                    <div class="text">
+                        <h2 style="font-weight:bold">Thông Tin Các Khu Công Nghiệp Tỉnh Vĩnh Phúc</h2>
+                    </div>
+                </div>
+                <nav id="menu_pc" class="nav-menu d-lg-block d-md-block d-none">
+                    <ul>
+                        <li class="active" ref="trang-chu"><a href="~/"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li ref="thong-ke-du-lieu"><a href="~/thong-ke-du-lieu"><i class="fas fa-chart-bar"></i> Thống Kê Dữ Liệu</a></li>-->
+            @*<li ref="crud"><a href="~/crud"><i class="fas fa-chart-bar"></i> CRUD</a></li>*@
+            <!--<li ref="ban-do"><a href="~/ban-do"><i class="fas fa-map"></i> Bản đồ</a></li>
+                            <li ref="van-ban"><a href="~/van-ban"><i class="far fa-file-contract"></i> Văn Bản</a></li>
+                            <li ref="dang-nhap"><a href="~/dang-nhap"><i class="fas fa-sign-in"></i> Đăng nhập</a></li>
+                        </ul>
+                    </nav>
+
+                    <input type="checkbox" id="overlay-input" />
+                    <label for="overlay-input" id="overlay-button"><span></span></label>
+                    <div id="overlay" class="menu_mobile">
+                        <ul>
+                            <li class="active" ref="trang-chu"><a href="~/">Trang chủ</a></li>
+                            <li ref="thong-ke-du-lieu"><a href="~/thong-ke-du-lieu">Thống Kê Dữ Liệu</a></li>
+                            <li ref="crud"><a href="~/crud">CRUD</a></li>
+                            <li ref="ban-do"><a href="~/ban-do">Bản đồ</a></li>
+                            <li ref="van-ban"><a href="~/van-ban">Văn Bản</a></li>
+                            <li ref="dang-nhap"><a href="~/dang-nhap"><i class="fas fa-sign-in"></i> Đăng nhập</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+                <h2 class="m-0 text-primary">WEBGIS</h2>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a ref="trang-chu" href="~/" class="nav-item nav-link active"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a ref="thong-ke-du-lieu" href="~/thong-ke-du-lieu" class="nav-item nav-link"><i class="fas fa-chart-bar"></i> Thống Kê Dữ Liệu</a>
+                    <a ref="ban-do" href="~/ban-do" class="nav-item nav-link"><i class="fas fa-map"></i> Bản đồ</a>
+                    <a ref="van-ban" href="~/van-ban" class="nav-item nav-link"><i class="fas fa-file-contract"></i> Văn Bản</a>
+                    <a ref="dang-nhap" href="~/dang-nhap" class="nav-item nav-link"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    </header>
+    @RenderBody()
+
+</body>
+</html>

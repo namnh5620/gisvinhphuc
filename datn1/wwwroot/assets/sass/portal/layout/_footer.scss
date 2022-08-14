@@ -1,0 +1,103 @@
+@import '../../abstracts/_mixins.scss';
+@import '../../abstracts/_variables.scss';
+@import "../../abstracts/_static.scss";
+
+.footer-top {
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    background: #1e3020;
+    background-image: url('../../../images/portal/bg-footer.png');
+    background-size: 100%;
+    //background-position: center;
+
+    .footer-logo {
+        padding: 5px;
+
+        img {
+            height: 70px;
+        }
+    }
+
+    .footer-left, .footer-right {
+        padding: 10px;
+
+        > h3 {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: $white;
+        }
+
+        > ul {
+            padding: 0;
+            margin-bottom: 0;
+
+            > li {
+                list-style: none;
+
+                > a {
+                    color: $white;
+                    position: relative;
+                    font-size: 15px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        display: block;
+                        bottom: -2px;
+                        left: 0;
+                        background: #e7944e;
+                        @include transition();
+                    }
+
+                    &:hover {
+                        color: #e7944e;
+
+                        &:before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-right {
+        padding: 12px;
+        text-align: center;
+        height: 100%;
+        border-left: solid;
+
+        p {
+            margin-left: 8px;
+            margin-bottom: 0;
+            font-size: 20px;
+        }
+    }
+} 
+
+.footer-bottom {
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+/******** RESPONSIVE  *********/
+
+@include ipadSmPort {
+    .footer-top .footer-logo {
+        display: none;
+    }
+
+    .footer-top .footer-right {
+        border-left: none;
+        text-align: left;
+    }
+}

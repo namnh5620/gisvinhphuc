@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Login</title>
+    <!-- Bootstrap 4 -->
+    <link rel="shortcut icon" href="/assets/images/logo.ico" type="image/x-icon">
+    <link href="~/assets/fonts/fontawe512/css/all.css" rel="stylesheet">
+    <link href="~/assets/fonts/fontawe4/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/lib/ScrollBar/perfect-scrollbar.css" rel="stylesheet" />
+    <script src="~/assets/lib/ScrollBar/perfect-scrollbar.js"></script>
+    <link href="~/assets/lib/toastr.css" rel="stylesheet" />
+    <script src="~/assets/lib/jquery3/jquery.min.js"></script>
+    <script src="~/assets/lib/toastr.js"></script>
+    <!-- jQuery 3 -->
+    <!-- Bootstrap 4 -->
+    @*<script src="~/assets/lib/bootstrap4/js/popper.min.js"></script>
+        <script src="~/assets/lib/bootstrap4/js/bootstrap.min.js"></script>*@
+    <script src="~/assets/lib/bootstrap4/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/DevJS/GQL.js"></script>*@
+    <script src="~/assets/js/portal/layout.js"></script>
+    <script src="~/assets/js/portal/app.js"></script>
+    <!--CSS Style-->
+    <link href="~/assets/lib/balloon.css" rel="stylesheet" />
+    <link href="~/assets/sass/portal/layout/_header.css" rel="stylesheet" />
+    <link href="~/assets/sass/portal/layout/_footer.css" rel="stylesheet" />
+
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("Scripts", required: false)
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="header-top">
+            <div class="bg-overlay"></div>
+            <div class="container">
+                <div class="header-top-wrapper d-flex">
+                    <div class="header-left d-flex">
+                        <div class="text">
+                            <h2 style="font-weight:bold">Quản Lý Các Khu Công Nghiệp Tỉnh Vĩnh Phúc</h2>
+                        </div>
+                    </div>
+                    <nav id="menu_pc" class="nav-menu d-lg-block d-md-block d-none">
+                        <ul>
+                            <li ref="ban-do"><a href="~/ban-do"><i class="fas fa-map"></i> Đăng nhập</a></li>
+                            <li ref="van-ban"><a href="~/van-ban"><i class="far fa-file-contract"></i> Đăng ký</a></li>
+                        </ul>
+                    </nav>
+
+                    <input type="checkbox" id="overlay-input" />
+                    <label for="overlay-input" id="overlay-button"><span></span></label>
+                    <div id="overlay" class="menu_mobile">
+                        <ul>
+                            <li ref="ban-do"><a href="~/ban-do">Đăng nhập</a></li>
+                            <li ref="van-ban"><a href="~/van-ban">Đăng ký</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+</body>
+</html>

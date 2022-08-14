@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Văn Bản";
+    Layout = "~/Views/Shared/_Layout_ChuDauTu.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_chudautu_user.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script src="~/assets/js/portal/map_chudautu_user.js"></script>
+}
+
+<div id="chudautu_user">
+    <div class="content">
+        <div class="content_head">
+            <h3><b>THÔNG TIN TÀI KHOẢN</b></h3>
+        </div>
+
+        <div class="content_body">
+            @*<div class="menu_user col-3">
+
+            </div>*@
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="taikhoan">Tài khoản <span style="color:red;">(*)</span></label>
+                        <input type="text" class="form-control" id="tt_makcn" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="matkhau">Mật khẩu <span style="color:red;">(*)</span></label>
+                        <input type="text" class="form-control" id="tt_tenkcn" placeholder="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="mr-sm-2" for="firstname">First name <span style="color:red;">(*)</span></label>
+                        <input type="text" class="form-control" id="tt_tenkcn" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="mr-sm-2" for="lastname">Last name <span style="color:red;">(*)</span></label>
+                        <input type="text" class="form-control" id="tt_tenkcn" placeholder="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="tt_soda" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tt_tylelapday">Số điện thoại</label>
+                        <input type="text" class="form-control" id="tt_tylelapday" placeholder="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="tt_phiquanly">Tên doanh nghiệp hạ tầng</label>
+                        <input type="text" class="form-control" id="tt_phiquanly" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tt_trangthai">Trạng thái</label>
+                        <input type="text" class="form-control" id="tt_trangthai" placeholder="">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit_ranhgioi">Lưu lại</button>
+            </form>
+        </div>
+        
+        <div class="foot">
+        </div>
+    </div>
+</div>

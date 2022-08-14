@@ -1,0 +1,31 @@
+﻿@charset "UTF-8";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/static";
+
+#map_thongke {
+    min-height: 100vh;
+    padding-top: 60px;
+
+    .btnAdd {
+        margin: 10px;
+    }
+
+    table {
+        width: 100%;
+
+        thead {
+            background-color: #ddd;
+            height: 35px;
+        }
+
+        tr {
+            margin: 10px 0 0 0;
+
+            button {
+                margin: 5px 0;
+            }
+        }
+    }
+}
+

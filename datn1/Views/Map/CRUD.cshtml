@@ -1,0 +1,89 @@
+﻿
+@model IEnumerable<datn1.Models.Map_DulieuModel>
+
+@{
+    ViewBag.Title = "Thống Kê Dữ Liệu";
+    Layout = "~/Views/Shared/_Layout_Map.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_crud.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script src="~/assets/js/portal/map_crud.js"></script>
+}
+
+<div id="map_thongke" class="container">
+
+    <button class="btnAdd btn btn-xs btn-success"><i class="fas fa-plus"></i> thêm </button>
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Chủ đầu tư</th>
+                <th>Huyện</th>
+                <th>Trạng thái</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody class="tabletk">
+        </tbody>
+    </table>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modalKcn">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title-add">Thêm mới Khu công nghiệp</h5>
+                    <h5 class="modal-title title-info">Chi tiết Khu công nghiệp</h5>
+                    <h5 class="modal-title title-update">Chỉnh sửa Khu công nghiệp</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <input type="text" class="form-control" id="kcn_id" value="" style="display: none;" />
+                            <div class="form-group">
+                                <label>Tên Khu công nghiệp</label>
+                                <input type="text" class="form-control" id="ten" placeholder="tên">
+                            </div>
+                            <div class="form-group">
+                                <label>Chủ đâu tư</label>
+                                <input type="text" class="form-control" id="chudautu" placeholder="chủ đâu tư">
+                            </div>
+                            <div class="form-group">
+                                <label>Huyện</label>
+                                <input type="text" class="form-control" id="huyen" placeholder="huyện">
+                            </div>
+                            <div class="form-group">
+                                <label>Trạng thái</label>
+                                <input type="text" class="form-control" id="trangthai" placeholder="trạng thái">
+                            </div>
+                            <div class="form-group">
+                                <label>Ghi chú</label>
+                                <input type="text" class="form-control" id="ghichu" placeholder="Ghi chú">
+                            </div>
+                            <div class="form-group">
+                                <label>Diện tích</label>
+                                <input type="text" class="form-control" id="dientich" placeholder="Diện tích">
+                            </div>
+                            <div class="form-group">
+                                <label>Diện tích đất công nghiệp</label>
+                                <input type="text" class="form-control" id="dientichdatcn" placeholder="Diện tích đất công nghiệp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSubmit">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+@Html.Partial("~/Views/Shared/_Footer_Map.cshtml")

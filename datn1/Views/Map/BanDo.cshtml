@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewBag.Title = "Bản Đồ";
+    Layout = "~/Views/Shared/_Layout_Map.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_bando.css" rel="stylesheet" />
+    <link href="~/assets/lib/6.14.1-dist/ol.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script type="text/javascript" src="javascripts/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="javascripts/receiver.js"></script>
+    <script src="~/assets/lib/6.14.1-dist/ol.js"></script>
+    <script src="~/assets/js/portal/map_bando.js"></script>
+}
+
+<div id="bando">
+    <div id="leftpanel">
+        <div class="title">
+            <p><i class="far fa-layer-group"></i> LỚP BẢN ĐỒ</p>
+        </div>
+
+        <div class="layers">
+            <div class="filter_kcn">
+                <div class="search">
+                    <input type="text" class="form-control" id="txtSearchkcn" placeholder="Tìm kiếm khu công nghiệp ...">
+                    <button id="btnSearchkcn" class="btn btn-primary btn-sm">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="layer">
+                <div class="layer_header">
+                    <p data-toggle="collapse" href="#layer_kcns" aria-expanded="false">
+                        <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> Khu công nghiệp
+                    </p>
+                </div>
+
+                <div class="collapse layer_body show" id="layer_kcns">
+                    <div class="gr_items">
+                        <div class="layer_items" id="ranhgioi">
+                            <i class="far fa-check-square"></i> <span>Thông tin KCN</span>
+                        </div>
+                        <i class="fal fa-table thongke"></i>
+                    </div>
+
+                    <div class="gr_items">
+                        <div class="layer_items" id="chialo">
+                            <i class="far fa-check-square"></i> <span>Chia lô sử dụng đất</span>
+                        </div>
+                        <i class="fal fa-table thongke"></i>
+                    </div>
+
+                    <div class="gr_items">
+                        <div class="layer_items" id="sudungdat">
+                            <i class="far fa-check-square"></i> <span>Tổng mặt bằng sử dụng đất</span>
+                        </div>
+                        <i class="fal fa-table thongke"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="layer">
+                <div class="layer_header">
+                    <p data-toggle="collapse" href="#layer_nenhc" aria-expanded="false">
+                        <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> Nền hành chính
+                    </p>
+                </div>
+
+                <div class="collapse layer_body" id="layer_nenhc">
+                    <div class="layer_items" id="commune">
+                        <i class="far fa-square"></i> Địa phận xã
+                    </div>
+                    <div class="layer_items" id="district">
+                        <i class="far fa-square"></i> Địa phận huyện
+                    </div>
+                    <div class="layer_items" id="province">
+                        <i class="far fa-square"></i> Địa phận tỉnh
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer_kcn">
+            </div>
+
+            @*<div class="layer" id="KhaiQuang">
+                    <div class="layer_header">
+                        <p data-toggle="collapse" href="#layer_KhaiQuang" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> KCN Khai Quang
+                        </p>
+                        <div class="layer_tools">
+                            <i class="far fa-map-marker-alt kcn_location"></i>
+                            <i class="fas fa-info info_modal"></i>
+                        </div>
+                    </div>
+
+                    <div class="collapse layer_body" id="layer_KhaiQuang">
+                        <div class="layer_items_lv2">
+                            <div class="layer_header1">
+                                <p data-toggle="collapse" href="#layer_KhaiQuang_htct" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> Hiện trạng cho thuê
+                                </p>
+                            </div>
+
+                            <div class="collapse layer_body1" id="layer_KhaiQuang_htct">
+                                <div class="layer_items1" id="dachothue_KhaiQuang">
+                                    <i class="far fa-square"></i> Đã cho thuê
+                                </div>
+                                <div class="layer_items1" id="chuachothue_KhaiQuang">
+                                    <i class="far fa-square"></i> Đang cho thuê
+                                </div>
+                                <div class="layer_items1" id="dangsanlap_KhaiQuang">
+                                    <i class="far fa-square"></i> Đang san lấp mặt bằng
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer_items_lv2">
+                            <div class="layer_header1">
+                                <p data-toggle="collapse" href="#layer_KhaiQuang_qg" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> Quốc gia, vùng lãnh thổ
+                                </p>
+                            </div>
+
+                            <div class="collapse layer_body1" id="layer_KhaiQuang_qg">
+                                <div class="layer_items1" id="hanquoc_KhaiQuang">
+                                    <i class="far fa-square"></i> Hàn Quốc
+                                </div>
+                                <div class="layer_items1" id="vietnam_KhaiQuang">
+                                    <i class="far fa-square"></i> Việt Nam
+                                </div>
+                                <div class="layer_items1" id="nhatban_KhaiQuang">
+                                    <i class="far fa-square"></i> Nhật Bản
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer_items_lv2">
+                            <div class="layer_header1">
+                                <p data-toggle="collapse" href="#layer_KhaiQuang_lvdt" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fas fa-caret-right">  </i> <i class="far fa-square">  </i> Lĩnh vực đầu tư
+                                </p>
+                            </div>
+
+                            <div class="collapse layer_body1" id="layer_KhaiQuang_lvdt">
+                                <div class="layer_items1" id="cn_vlxd_KhaiQuang">
+                                    <i class="far fa-square"></i> Công nghiệp VLXD cao cấp, bao bì nhựa, SP nhựa
+                                </div>
+                                <div class="layer_items1" id="cn_cokhi_KhaiQuang">
+                                    <i class="far fa-square"></i> Công nghiệp cơ khí
+                                </div>
+                                <div class="layer_items1" id="cn_dientu_KhaiQuang">
+                                    <i class="far fa-square"></i> Công nghiệp điện tử
+                                </div>
+                                <div class="layer_items1" id="cn_nhe_KhaiQuang">
+                                    <i class="far fa-square"></i> Công nghiệp nhẹ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> *@
+        </div>
+    </div>
+
+    <div id="rightpanel">
+        <div id="map" class="map"></div>
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content">
+                <div class="popup_chialo"></div>
+                <div class="popup_sudungdat"></div>
+                <div class="popup_ranhgioi"></div>
+            </div>
+        </div>
+
+        <div class="mybutton" onclick="attributeQuery()">
+            <div class="BaseMap">
+                <button class="switcher"></button>
+            </div>
+            <div class="Tool">
+
+            </div>
+        </div>
+        @*<div id="" class="mousePosition"></div>*@
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modalBasemap">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title title-add">Bản đồ nền</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="BaseItem active" v="GoogleMap">
+                            <img src="~/assets/images/Bando/imgggmap.png" />
+                            <p>Google</p>
+                        </div>
+                        <div class="BaseItem" v="Satellite">
+                            <img src="~/assets/images/Bando/imgvetinh.png" />
+                            <p>Vệ tinh</p>
+                        </div>
+                        <div class="BaseItem" v="OSMStandard">
+                            <img src="~/assets/images/Bando/imgosm.jpg" />
+                            <p>OSM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modalInfokcn">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title title-add">Thông tin Khu công nghiệp</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="tenKCN">
+                        </div>
+                        <div class="ndchitiet">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="" id="myDataView" style="display: none;">
+        <div class="DataView-content">
+            <div class="DataView-header">
+                <div class="header-bar">
+                    <h5 class="myDataView_modal-title title-add"><b>KCN </b></h5>
+                    <div class="myDataView_search">
+                        <input type="text" class="form-control" id="myDataView_txtSearchkcn" placeholder="Tìm kiếm khu công nghiệp ...">
+                        <button id="myDataView_btnSearchkcn" class="btn btn-primary btn-sm">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <div id="myDataView_page_navigation"></div>
+                    <div class="myDataView_total"><span> Tổng số: 337 </span></div>
+                    <div class="myDataView_excels"><i class="far fa-file-excel"></i></div>
+                </div>
+
+                <button type="button" class="close close-myDataView" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="DataView-body">
+                <div class="DataView-body-content">
+                    <table class="table_dataView">
+                        <thead>
+                            <tr>
+                                <th style="width:40px;">STT</th>
+                                <th>Khu công nghiệp</th>
+                                <th>Ký hiệu lô đất</th>
+                                <th>Diện tích (ha)</th>
+                                <th>Hiện trạng</th>
+                                <th>Doanh nghiệp thuê</th>
+                                <th>Quốc tịch</th>
+                                <th>Vị trí</th>
+                            </tr>
+                        </thead>
+                        <tbody class="DataView_tbody">
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td><i class="fas fa-map-marker-alt"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

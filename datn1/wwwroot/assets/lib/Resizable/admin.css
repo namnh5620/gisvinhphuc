@@ -1,0 +1,26 @@
+﻿body {
+}
+
+.news-admin{}
+.news-admin ul{margin:0;padding:0;list-style:none;}
+.news-admin .author{color:#999;font-style:italic;font-size:small;}
+
+
+/* grid css */
+.noi-that {
+    background-image: -moz-radial-gradient(circle,#165387,#142849);
+    margin: 0;
+}
+.ecopark {
+    background: url(/theme/ecopark-bg.jpg) no-repeat center bottom;
+    background-attachment: fixed;
+    background-size: 1440px;
+}
+.login-box {padding: 10px;margin: 0 auto;width:300px;background-color:#fff;margin-top:100px;padding:20px;box-shadow: 0 5px 20px rgba(0,0,0,0.4);}
+.login-box h1{margin:-30px -30px 30px -30px;padding:0;background-color:#665851;color:#fff;padding:20px 30px;font-size:12pt;text-transform:uppercase;text-align:center;}
+
+.saigon{background:url(/theme/saigon.png) no-repeat center center fixed;background-size: cover;margin:0;}
+.login-box2 {padding: 10px;margin: 0 auto;width:300px;background-color:#fff;margin-top:100px;padding:30px;box-shadow: 0 5px 20px rgba(0,0,0,0.4);border-radius:10px;overflow:hidden;}
+.login-box2 h1{margin:-30px -30px 30px -30px;padding:0;background-color:#ff3938;color:#fff;padding:20px 30px;font-size:12pt;text-transform:uppercase;line-height:30px;font-weight:bold;}
+.btn-red {background-color:#ff3938;color:#fff;}
+.foot-text{color:#f9f9f9;padding:10px;}

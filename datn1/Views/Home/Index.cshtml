@@ -1,0 +1,20 @@
+﻿@model IEnumerable<datn1.Models.DataModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+    </tr>
+    @foreach (var o in Model)
+    {
+        <tr>
+            <td>@o.name</td>
+            <td>@o.email</td>
+            <td>@o.department</td>
+        </tr>
+    }
+</table>

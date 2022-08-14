@@ -1,0 +1,327 @@
+@import "../abstracts/_mixins.scss";
+@import "../abstracts/_static.scss";
+@import "../abstracts/_variables.scss";
+
+#header {
+    .header-top {
+        height: 50px;
+        position: absolute;
+        width: 100%;
+        @include transition();
+        z-index: 1;
+        //background: #03a9f3;
+
+        .bg-overlay {
+            width: 100%;
+            position: absolute;
+            background-image: url('../../../images/portal/chudautu_header.jpg');
+            background-size: cover;
+            height: 100%;
+        }
+
+        &-wrapper {
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 9px;
+            position: relative;
+
+            .header-left {
+                text-transform: uppercase;
+                color: $white;
+                align-items: center;
+
+                .text {
+                    margin-left: 10px;
+
+                    h2, h3 {
+                        margin: 0;
+                        font-size: 18px;
+                        line-height: 17px;
+                        margin-top: 5px;
+                        color: #fff;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+
+                .logo {
+                    overflow: hidden;
+
+                    img {
+                        margin: 0;
+                        padding: 0;
+                        height: 45px;
+                        background-size: cover;
+                    }
+                }
+            }
+
+            .nav-menu {
+                ul {
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        white-space: nowrap;
+                        margin-left: 15px;
+                        background: none;
+
+                        &.active {
+                            > a {
+                                background: #ffffffe6;
+                                color: #1e3561;
+                            }
+                        }
+
+                        &.dropdown {
+                            padding: 0;
+                            margin-top: -1px;
+                        }
+
+                        a {
+                            font-family: 'Nunito-Regular';
+                            display: block;
+                            position: relative;
+                            padding: 5px 10px;
+                            font-weight: 600;
+                            color: #fff;
+                            transition: 0.2s linear;
+                            font-size: 14px;
+                            border-radius: 20px;
+                            text-transform: uppercase;
+
+                            @at-root .dropdown-menu a {
+                                color: #6d6d6d !important;
+                                font-size: 0.9em !important;
+                                text-transform: unset !important;
+                            }
+
+                            &:hover {
+                                background: #ffffffe6;
+                                color: #1e3561;
+                            }
+
+                            > i {
+                                position: relative;
+
+                                > span {
+                                    position: absolute;
+                                    right: -12px;
+                                    top: -11px;
+                                    color: #574842;
+                                    background: #fff;
+                                    padding: 0px 5px;
+                                    line-height: 17px;
+                                    text-align: center;
+                                    font-size: 11px;
+                                    border-radius: 50%;
+                                    border: 1px solid #fff;
+                                    background: #e7944e;
+                                    color: #fff;
+                                }
+                            }
+                        }
+
+                        .cart {
+                            font-size: 20px;
+                            line-height: 22px;
+                        }
+
+                        .btn-login {
+                            -webkit-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -o-transition: all 0.3s;
+                            transition: all 0.3s;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.sidepanel{
+    box-shadow:none!important;
+}
+/*** Mobile **/
+.menu_mobile {
+    display: none;
+}
+
+#overlay-button {
+    display: none;
+}
+
+@keyframes bugfix {
+    from {
+        padding: 0;
+    }
+
+    to {
+        padding: 0;
+    }
+}
+
+@-webkit-keyframes bugfix {
+    from {
+        padding: 0;
+    }
+
+    to {
+        padding: 0;
+    }
+}
+
+#overlay-button {
+    position: absolute;
+    right: 6%;
+    top: 7%;
+    padding: 15px 11px;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+
+    span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+
+        &:before {
+            top: -10px;
+            visibility: visible;
+        }
+
+        &:after {
+            top: 10px;
+        }
+
+        &:before, &:after {
+            height: 4px;
+            width: 35px;
+            border-radius: 2px;
+            background-color: white;
+            position: absolute;
+            content: "";
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    &:hover span, &:hover span:before, &:hover span:after {
+        background: #333332;
+    }
+}
+
+#overlay-input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay {
+    visibility: visible;
+}
+
+input[type=checkbox]:checked ~ #overlay-button {
+    &:hover span, span {
+        background: transparent;
+    }
+
+    span {
+        &:before {
+            transform: rotate(45deg) translate(7px, 7px);
+            opacity: 1;
+        }
+
+        &:after {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    }
+}
+
+#overlay {
+    height: 100vh;
+    width: 75%;
+    top: 0;
+    right: 0;
+    background: rgba($primary-color, 0.9);
+    z-index: 2;
+    visibility: hidden;
+    position: fixed;
+
+    &.active {
+        visibility: visible;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 6%;
+        list-style-type: none;
+
+        li {
+            padding: 1em;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.5em;
+
+                &:hover {
+                    color: #333332;
+                }
+            }
+        }
+    }
+}
+
+
+/******** RESPONSIVE **********/
+@media only screen and (min-width: 1200px) {
+    .container {
+        min-width: 77%;
+    }
+}
+
+@include ipad {
+    #header .header-top-wrapper .header-left .text {
+        display: none;
+    }
+}
+
+@include mobile {
+    #header .header-top-wrapper .nav-menu ul li a {
+        font-size: 14px;
+    }
+}
+
+@include ipadSmPort {
+    .menu_mobile, #overlay-button {
+        display: block;
+    }
+}
+
+@include iphonePlus {
+    #p-HomePort .p-container .p-title h1 {
+        font-size: 25px;
+        padding-left: 10px !important;
+    }
+
+    #p-HomePort .p-container .p-title p {
+        font-size: 22px;
+        padding-left: 10px !important;
+    }
+
+    #p-HomePort .p-container #GioiThieu {
+        width: 100%;
+        padding: 10px !important;
+    }
+}

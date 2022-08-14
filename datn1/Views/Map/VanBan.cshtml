@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Văn Bản";
+    Layout = "~/Views/Shared/_Layout_Map.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_vanban.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script src="~/assets/js/portal/map_vanban.js"></script>
+}
+
+<div id="map_vanban">
+    <div class="content col-md-12">
+        <div class="menu_vb col-md-3">
+            <div class="tab-new-block">
+                <div class="title-header-info">
+                    <a> CƠ QUAN BAN HÀNH </a>
+                </div>
+                <div class="tab-content list-content">
+                    <ul class="list-Data-Show fontweight" id="coquanbanhanh">
+                        <li class="box-showd">
+                            <input type="hidden" name="coquanbanhanh1" id="coquanbanhanh1" value="coquanbanhanh1">
+                            <a href="#" class="list-select-tree-children coquanbanhanh1" value="coquanbanhanh1" style="text-decoration: none;">
+                                <i class="fas fa-angle-double-right boixanh"></i>UBND Tỉnh Vĩnh Phúc
+                            </a>
+                        </li>
+                        <li class="box-showd">
+                            <input type="hidden" name="coquanbanhanh2" id="coquanbanhanh2" value="coquanbanhanh2">
+                            <a href="#" class="list-select-tree-children coquanbanhanh2" value="coquanbanhanh2" style="text-decoration: none;">
+                                <i class="fas fa-angle-double-right boixanh"></i>HĐND Tỉnh Vĩnh Phúc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-new-block">
+                <div class="title-header-info">
+                    <a> LOẠI VĂN BẢN </a>
+                </div>
+                <div class="tab-content list-content">
+                    <ul class="list-Data-Show fontweight" id="loaivanban">
+                        <li class="box-showd">
+                            <a data-id="nghiquyet" class="list-select-tree-children click">
+                                <i class="fas fa-angle-double-right boixanh"></i>Nghị quyết
+                            </a>
+                        </li>
+
+                        <li class="box-showd">
+                            <a data-id="chithi" class="list-select-tree-children click">
+                                <i class="fas fa-angle-double-right boixanh"></i>Chỉ thị
+                            </a>
+                        </li>
+
+                        <li class="box-showd">
+                            <a data-id="quyetdinh" class="list-select-tree-children click">
+                                <i class="fas fa-angle-double-right boixanh"></i>Quyết định
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="list_vb col-md-9">
+            <div class="title-header-info">
+                <a> VĂN BẢN PHÁP LUẬT </a>
+            </div>
+
+            <div class="filter_vb">
+                <div class="mydropdown">
+                    <select class="custom-select mr-sm-2" id="cqbh_filter">
+                        <option value="" selected>Chọn cơ quan ban hành</option>
+                        <option value="coquanbanhanh1">UBND Tỉnh Vĩnh Phúc</option>
+                        <option value="coquanbanhanh2">HĐND Tỉnh Vĩnh Phúc</option>
+                    </select>
+                </div>
+                <div class="mydropdown">
+                    <select class="custom-select mr-sm-2" id="lvb_filter">
+                        <option value="" selected>Chọn loại văn bản</option>
+                        <option value="nghiquyet">Nghị Quyết</option>
+                        <option value="chithi">Chỉ Thị</option>
+                        <option value="quyetdinh">Quyết Định</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="list_data">
+                <li class="box-showd background-sad">
+                    <a target="_blank" href="http://vbpl.vn/vinhphuc/Pages/vbpq-toanvan.aspx?ItemID=72543&amp;dvid=304" class="view-detail">
+                        <p class="title-bold title-befor">
+                            Số ký hiệu: 434/QĐ-UB
+                        </p>
+                        <div class="NoiDung-du-thao cut-line-text2">
+                            <span class="title-bold">Trích yếu: </span> ban hành quy định trách nhiệm và quan hệ phối hợp giữa các cơ quan quản lý Nhà nước trong công tác quản lý thị trường thuốc tân dược, đông nam dược dùng cho người trên địa bàn tỉnh Vĩnh phúc
+                        </div>
+                    </a>
+                    <p class="time-create col-flex"> <span>Ngày ban hành: 06/05/1997</span> <span>Ngày có hiệu lực: </span></p>
+                </li>
+            </ul>
+
+            <div id="page_navigation"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+@Html.Partial("~/Views/Shared/_Footer_Map.cshtml")

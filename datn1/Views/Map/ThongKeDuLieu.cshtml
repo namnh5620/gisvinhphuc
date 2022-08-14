@@ -1,0 +1,102 @@
+﻿
+@model IEnumerable<datn1.Models.Map_DulieuModel>
+
+@{
+    ViewBag.Title = "Thống Kê Dữ Liệu";
+    Layout = "~/Views/Shared/_Layout_Map.cshtml";
+}
+@section Styles {
+    <link href="~/assets/sass/portal/pages/map_thongke.css" rel="stylesheet" />
+}
+@section Scripts {
+    <script src="~/assets/js/portal/map_thongke.js"></script>
+}
+
+<div id="map_thongke" class="container">
+    <!--<div class="content">-->
+        @*<div class="menu_tk col-md-3"></div>*@
+
+        <!--<div class="content_tk">
+            <div class="filter_tk">
+                <div class="input-group" id="mysearch">
+                    <input class="form-control" id="txtSearch" type="text" placeholder="Search..">
+                    <button type="submit" id="btnSearch" class="btn btn-primary btn-sm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <select id="myList" class="dropdown-toggle custom-select mr-sm-2">
+                    <option class="dropdown-item"> KCN Bá Thiện </option>
+                    <option class="dropdown-item"> KCN Bình Xuyến </option>
+                    <option class="dropdown-item"> KCN Chấn Hưng </option>
+                </select>
+            </div>
+            <div class="bieudo_tk">
+                <figure class="highcharts-figure">
+                    <div id="hientrang"></div>
+                </figure>
+                <figure class="highcharts-figure">
+                    <div id="quocgia"></div>
+                </figure>
+                <figure class="highcharts-figure">
+                    <div id="lvdautu"></div>
+                </figure>
+            </div>
+            <div class="bang_tk">
+                <table>
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="content">
+        <div class="ttchung col-3">
+
+            <select id="myList" class="dropdown-toggle custom-select mr-sm-2">
+                <option class="dropdown-item"> KCN Bá Thiện </option>
+                <option class="dropdown-item"> KCN Bình Xuyến </option>
+                <option class="dropdown-item"> KCN Chấn Hưng </option>
+            </select>
+
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> <b>Địa điểm:</b> TT Hương Canh - huyện Bình Xuyên - tỉnh Vĩnh Phúc</li>
+                <li><i class="fas fa-user"></i> <b>Chủ đầu tư:</b> Công ty TNHH đầu tư xây dựng An Thịnh Vĩnh Phúc</li>
+                <li><i class="fas fa-phone"></i> <b>Điện thoại:</b> 0211 3596 868</li>
+                <li><i class="fas fa-envelope"></i> <b>Email:</b> nam.nh@gmail.com</li>
+                <li><i class="fas fa-flag"></i> <b>Diện tích:</b> 286.9808</li>
+                <li><i class="fas fa-link"></i> <b>Trạng thái:</b> Đang hoạt động</li>
+            </ul>
+        </div>
+        <div class="ttchitiet col-9">
+            <div class="noidung">
+                <div class="tenKCN">
+                    <h2><b>KCN BÌNH XUYẾN</b></h2>
+                </div>
+                <div class="ndchitiet">
+
+                </div>
+
+                <div class="bieudo">
+                    <figure class="highcharts-figure">
+                        <div id="hientrang"></div>
+                    </figure>
+                    <figure class="highcharts-figure">
+                        <div id="quocgia"></div>
+                    </figure>
+                    <figure class="highcharts-figure">
+                        <div id="lvdautu"></div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+@Html.Partial("~/Views/Shared/_Footer_Map.cshtml")

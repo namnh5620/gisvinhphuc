@@ -1,0 +1,30 @@
+﻿@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Italic';
+  src: url('SourceSansPro-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-LightItalic';
+  src: url('SourceSansPro-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-BoldItalic';
+  src: url('SourceSansPro-BoldItalic.ttf') format('truetype');
+}
+
